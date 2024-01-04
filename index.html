@@ -1,0 +1,230 @@
+
+<html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>IAT: Instituto de Artes Taoístas</title>
+	<link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Yin_and_Yang_symbol.svg/1200px-Yin_and_Yang_symbol.svg.png"/>
+  <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="site.css" asp-append-version="true" />
+</head>
+
+
+
+
+
+<header>
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IAT: Instituto de Artes Taoístas</title>
+  <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="site.css" asp-append-version="true" />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+<a class="navbar-brand title-custom" asp-area="" asp-controller="Home" asp-action="Index">IAT: Instituto de Artes Taoístas</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="index">Home</a>
+                        </li>
+
+
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="quemsomos">Quem Somos</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Atendimento" asp-action="atendimentos">Atendimentos</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="parceiros">Parceiros</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="galeria">Galeria</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="faleconosco">Fale Conosco</a>
+                        </li>
+                                                 <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Curso" asp-action="cursos">Cursos</a>
+                        </li>
+
+   
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Lista">Listagem</a>
+                        </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Logout">Logout</a>
+                        </li>
+
+                        <li class="nav-item">
+                                 <li class="nav-item">
+                            <a class="nav-link text-dark btn-inscreva-se" asp-area="" asp-controller="Usuario" asp-action="Login">Login</a>
+                        </li>
+
+                      <li class="nav-item">
+                            <a class="nav-link text-dark btn-inscreva-se" asp-area="" asp-controller="Usuario" asp-action="inscricao">Inscreva-se</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Bloco de busca -->
+      <div class="col-md-4 my-3">
+        <form action="#" method="get">
+          <div class="input-group">
+            <input name="busca" type="text" class="form-control" placeholder="Buscar">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-success" type="submit">Buscar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Espaço para o logo -->
+      <div class="col-md-4 my-3 text-center">
+        <img src="https://i0.wp.com/www.taiji.net/wp-content/uploads/2023/02/Turtle-Luo-River1.png?w=800&ssl=1" alt="Logo" class="img-fluid" width= "150" height="150">
+      </div>
+
+      <!-- Bloco do formulário -->
+      <div class="col-md-4 my-3">
+        <form asp-action="Login" method="Post">
+          <div class="form-group">
+            <label for="Login">E-mail ou Login:</label>
+            <input type="Login" id="Login" name="login" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="Senha">Senha:</label>
+            <input type="password" id="Senha" name="Senha" class="form-control">
+          </div>
+          <input type="submit" value="Login" class="btn btn-primary">
+
+        @if(Context.Session.GetInt32("IdUsuario") == null)
+      {
+    <p>Não tem uma conta? <a href="Usuario/Inscricao">Inscreva-se</a></p>
+      }
+
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+	<body>
+
+<main>
+  <div class="row justify-content-center">
+    <div class="col-12 my-3 text-center">
+        <div id="carouselExampleIndicators" class="carousel slide mx-auto align-items-center" data-ride="carousel" style="width: 90%;">
+                 <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="https://www.clinicahiraoka.com.br/website/wp-content/uploads/2023/03/clinica-hiraoka-lao-qigong-100_0431.jpg" alt="First slide" style="object-fit: cover; height: 300px;">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://seriousfengshui.info/wp-content/uploads/2019/09/Chinese_Zodiac_Final_correct_Tao-1016x1024.jpg" alt="Second slide" style="object-fit: cover; height: 300px;">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://i.etsystatic.com/6516175/r/il/e9687e/3941032451/il_fullxfull.3941032451_8gov.jpg" alt="Third slide" style="object-fit: cover; height: 300px;">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Primeira div em cima -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="https://www.shutterstock.com/image-vector/10-heavenly-stems-vector-colour-260nw-1180734652.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Curso on-line Astrologia Chinesa - Bazi Zi Ping</h5>
+          <p class="card-text">Para quem quer aprender o básico da filosofia por trás do Bazi, entender trânsitos e a ler mapas.</p>
+          <a href="curso/cursos" class="btn btn-primary ">Ver mais</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!-- Segunda div em cima -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="https://www.researchgate.net/publication/5879862/figure/fig6/AS:667181952036882@1536079981874/The-I-Ching-itemizes-64-combinatorics-of-Yin-and-Yang-Source.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Atendimentos</h5>
+          <p class="card-text">Consultas com cristais, leitura de mapa e trânsitos astrológicos, Fa Gong, Fitoterapia Chinesa, Medicina Chinesa e I Ching.</p>
+          <a href="atendimento/atendimentos" class="btn btn-primary ">Ver mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <!-- Primeira div embaixo -->
+      <div class="card mb-4">
+        <div class="embedVideo popupContent card-img-top">
+          <iframe src="https://www.youtube.com/ocaminhante" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Conheça nosso Youtube</h5>
+          <p class="card-text">Entenda nossa metodologia de ensino a partir de trechos de aulas e aulas completas disponibilizadas gratuitamente no Youtube.</p>
+          <a href="https://www.youtube.com/ocaminhante" class="btn btn-primary">Ver mais</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!-- Segunda div embaixo -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="https://media.istockphoto.com/id/1225721539/pt/foto/the-doctor-of-traditional-chinese-medicine-pulse.jpg?s=612x612&w=0&k=20&c=5FSkf0LyD5NTsirvfKB24hYeonfhQ7BE-LIqZeUFwvs=" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Galeria</h5>
+          <p class="card-text">Fotos e vídeos de atendimentos e aulas</p>
+          <a href="home/galeria" class="btn btn-primary ">Ver mais</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	 <script src="site.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+</body>
+<footer>
+  <div class="redes-sociais">
+    <a href="https://www.instagram.com/ocaminhante_">
+      <img class="instagram-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" alt="Logo Instagram" />
+    </a>
+  </div>
+</footer>
+</html>
+
+<!-- Código gerado por Ana Casili em 12.04.2023 -->
+	
